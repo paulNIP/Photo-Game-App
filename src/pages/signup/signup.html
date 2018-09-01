@@ -1,0 +1,98 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Create an Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home-page">
+  <form #signupForm="ngForm" novalidate>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-input [(ngModel)]="signup.firstname" name="firstname" type="text" #firstname="ngModel" placeholder="First Name" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        First Name is required
+      </p>
+
+      <ion-item>
+        <ion-input [(ngModel)]="signup.lastname" name="lastname" type="text" #lastname="ngModel" placeholder="Last Name" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Last Name is required
+      </p>
+      <ion-item>
+        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" placeholder="UserName" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        User Name is required
+      </p>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select [(ngModel)]="signup.gender" name="gender" #gender="ngModel">
+               
+                <ion-option value="">Selcect Gender</ion-option>
+                <ion-option value="Male"> Male</ion-option>
+                <ion-option value="Female">Female</ion-option>
+            </ion-select>
+      </ion-item>
+      <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Select Gender
+      </p>
+      <ion-item>
+          //select field Required
+          <ion-select [(ngModel)]="signup.code" name="code" #code="ngModel">
+                <ion-option value="+256">+256</ion-option>
+                <ion-option value="+243"> +243</ion-option>
+                <ion-option value="+257"> +257 </ion-option>
+                </ion-select>
+        <ion-input [(ngModel)]="signup.contact" name="contact" type="text" #contact="ngModel" placeholder="Phone Number" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Contact is required
+      </p>
+      <ion-item>
+        <ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" placeholder="E-mail Address" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        E-mail  is required
+      </p>
+      <ion-item>
+        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" placeholder="Password (Minimum 6 Characters)" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Password is required
+      </p>
+      <ion-item>
+        <ion-input [(ngModel)]="signup.passwordconfirm" name="passwordconfirm" type="password" #passwordconfirm="ngModel" placeholder="Confirm Password" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Please Confirm Password
+      </p>
+
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button (click)="onSignup(signupForm)" type="submit" block>Create Account</button>
+    </div>
+    <div padding>
+      <button ion-button (click)="login()" type="submit" block>Already A Member? Login</button>
+    </div>
+  </form>
+

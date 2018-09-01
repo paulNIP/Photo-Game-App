@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only menuToggle>
+              <ion-icon name='menu'></ion-icon>
+          </button>
+      </ion-buttons>
+      Upload 
+      <ion-buttons end>
+        <button ion-button >
+          <ion-icon name="cloud-upload"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content >    
+    <ion-item>
+      <p>{{imageURI}}</p>
+      <button ion-button (click)="getImage();">Take Picture</button>
+    </ion-item>
+    <ion-item>
+      <h4>Preview of Image </h4>
+      <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+    </ion-item>
+    <ion-item>
+        <button ion-button (click)="uploadFile()">Upload</button>
+    </ion-item>
+
+
+  </ion-content>
