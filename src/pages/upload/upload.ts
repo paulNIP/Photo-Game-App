@@ -143,7 +143,7 @@ export class UploadPage {
                     headers: {}
                   }
               
-                  fileTransfer.upload(this.imageURI, 'http://www.nip-ye.com/PhotoGameApp/'+this.imageFileName, options)
+                  fileTransfer.upload(this.imageURI, 'http://www.nip-ye.com/PhotoGameApp/pictureupload.php', options)
                     .then((data) => {
                     console.log(data+" Uploaded Successfully");
                     //insert data into database
